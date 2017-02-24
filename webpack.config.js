@@ -291,5 +291,6 @@ module.exports = {
     "clearImmediate": false,
     "setImmediate": false
   },
-  //target: 'electron-renderer'
+  // If this is enabled only electron renderer will work
+  //target: "electron-renderer"
 };
