@@ -1,0 +1,7 @@
+<div>
+  <h2>Topi Channel</h2>
+
+  <div>
+    <img *ngFor="let video of (videos$ | async)" src="{{video.snippet.thumbnails.medium.url}}" />
+  </div>
+</div>

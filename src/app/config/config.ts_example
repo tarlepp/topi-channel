@@ -1,0 +1,7 @@
+export const API = {
+  KEY: '_your_google_api_key_'
+};
+
+export class Config {
+  public static API = API;
+}

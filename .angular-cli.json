@@ -1,8 +1,8 @@
 {
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
     "version": "1.0.0-beta.32.3",
-    "name": "Topi-Channel",
-    "ejected": true
+    "name": "topi-channel"
   },
   "apps": [
     {
@@ -10,7 +10,9 @@
       "outDir": "dist",
       "assets": [
         "assets",
-        "favicon.ico"
+        "favicon.ico",
+        "entry.js",
+        "entry.live.js"
       ],
       "index": "index.html",
       "main": "main.ts",
@@ -19,10 +21,9 @@
       "tsconfig": "tsconfig.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "styles.scss"
       ],
-      "scripts": [
-      ],
+      "scripts": [],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
@@ -51,8 +52,7 @@
     }
   },
   "defaults": {
-    "styleExt": "css",
-    "component": {
-    }
+    "styleExt": "scss",
+    "component": {}
   }
 }
