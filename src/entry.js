@@ -10,7 +10,16 @@ let win;
 
 function createWindow() {
   // Create the browser window.
-  win = new BrowserWindow({width: 1000, height: 600});
+  win = new BrowserWindow({
+    width: 1000,
+    height: 600,
+    backgroundColor: '#2b2b2b',
+    resizable: false,
+    maximizable: false,
+    darkTheme: true,
+  });
+
+  win.setTitle('Topi Channel');
 
   // and load the index.html of the app.
   win.loadURL(url.format({
