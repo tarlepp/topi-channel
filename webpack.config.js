@@ -1,3 +1,5 @@
+'use strict';
+
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ProgressPlugin = require('webpack/lib/ProgressPlugin');
@@ -13,7 +15,6 @@ const { AotPlugin } = require('@ngtools/webpack');
 const nodeModules = path.join(process.cwd(), 'node_modules');
 const entryPoints = ["inline","polyfills","sw-register","styles","vendor","main"];
 
-// "/home/wunder/projects/topi-channel/src"
 const appRoot = path.resolve(__dirname, 'src');
 
 module.exports = {
@@ -127,13 +128,13 @@ module.exports = {
         ],
         "test": /\.css$/,
         "loaders": ExtractTextPlugin.extract({
-  "use": [
-    "css-loader?{\"sourceMap\":false,\"importLoaders\":1}",
-    "postcss-loader"
-  ],
-  "fallback": "style-loader",
-  "publicPath": ""
-})
+          "use": [
+            "css-loader?{\"sourceMap\":false,\"importLoaders\":1}",
+            "postcss-loader"
+          ],
+          "fallback": "style-loader",
+          "publicPath": ""
+        })
       },
       {
         "include": [
@@ -141,14 +142,14 @@ module.exports = {
         ],
         "test": /\.scss$|\.sass$/,
         "loaders": ExtractTextPlugin.extract({
-  "use": [
-    "css-loader?{\"sourceMap\":false,\"importLoaders\":1}",
-    "postcss-loader",
-    "sass-loader"
-  ],
-  "fallback": "style-loader",
-  "publicPath": ""
-})
+          "use": [
+            "css-loader?{\"sourceMap\":false,\"importLoaders\":1}",
+            "postcss-loader",
+            "sass-loader"
+          ],
+          "fallback": "style-loader",
+          "publicPath": ""
+        })
       },
       {
         "include": [
@@ -156,14 +157,14 @@ module.exports = {
         ],
         "test": /\.less$/,
         "loaders": ExtractTextPlugin.extract({
-  "use": [
-    "css-loader?{\"sourceMap\":false,\"importLoaders\":1}",
-    "postcss-loader",
-    "less-loader"
-  ],
-  "fallback": "style-loader",
-  "publicPath": ""
-})
+          "use": [
+            "css-loader?{\"sourceMap\":false,\"importLoaders\":1}",
+            "postcss-loader",
+            "less-loader"
+          ],
+          "fallback": "style-loader",
+          "publicPath": ""
+        })
       },
       {
         "include": [
@@ -171,14 +172,14 @@ module.exports = {
         ],
         "test": /\.styl$/,
         "loaders": ExtractTextPlugin.extract({
-  "use": [
-    "css-loader?{\"sourceMap\":false,\"importLoaders\":1}",
-    "postcss-loader",
-    "stylus-loader?{\"sourceMap\":false,\"paths\":[]}"
-  ],
-  "fallback": "style-loader",
-  "publicPath": ""
-})
+          "use": [
+            "css-loader?{\"sourceMap\":false,\"importLoaders\":1}",
+            "postcss-loader",
+            "stylus-loader?{\"sourceMap\":false,\"paths\":[]}"
+          ],
+          "fallback": "style-loader",
+          "publicPath": ""
+        })
       },
       {
         "test": /\.ts$/,
