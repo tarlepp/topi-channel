@@ -11,10 +11,10 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "run": "electron .",
-    "package:linux": "electron-packager . $npm_package_name-$npm_package_version --ignore=src --ignore=e2e --ignore=.*\\.conf\\.js --ignore=\"(angular-cli|tsconfig)\\.json\" --ignore=webpack.*\\.js --out=packages --platform=linux --arch=all --overwrite",
-    "package:mac": "electron-packager . $npm_package_name-$npm_package_version --ignore=src --ignore=e2e --ignore=.*\\.conf\\.js --ignore=\"(angular-cli|tsconfig)\\.json\" --ignore=webpack.*\\.js --out=packages --platform=darwin --arch=all --overwrite ",
-    "package:win": "electron-packager . $npm_package_name-$npm_package_version --ignore=src --ignore=e2e --ignore=.*\\.conf\\.js --ignore=\"(angular-cli|tsconfig)\\.json\" --ignore=webpack.*\\.js --out=packages --platform=win32 --arch=all --overwrite ",
-    "package:all": "electron-packager . $npm_package_name-$npm_package_version --ignore=src --ignore=e2e --ignore=.*\\.conf\\.js --ignore=\"(angular-cli|tsconfig)\\.json\" --ignore=webpack.*\\.js --out=packages --all --overwrite"
+    "package:linux": "ng build --prod && electron-packager . $npm_package_name-$npm_package_version --ignore=src --ignore=e2e --ignore=.*\\.conf\\.js --ignore=\"(angular-cli|tsconfig)\\.json\" --ignore=webpack.*\\.js --out=packages --platform=linux --arch=all --overwrite",
+    "package:mac": "ng build --prod && electron-packager . $npm_package_name-$npm_package_version --ignore=src --ignore=e2e --ignore=.*\\.conf\\.js --ignore=\"(angular-cli|tsconfig)\\.json\" --ignore=webpack.*\\.js --out=packages --platform=darwin --arch=all --overwrite ",
+    "package:win": "ng build --prod && electron-packager . $npm_package_name-$npm_package_version --ignore=src --ignore=e2e --ignore=.*\\.conf\\.js --ignore=\"(angular-cli|tsconfig)\\.json\" --ignore=webpack.*\\.js --out=packages --platform=win32 --arch=all --overwrite ",
+    "package:all": "ng build --prod && electron-packager . $npm_package_name-$npm_package_version --ignore=src --ignore=e2e --ignore=.*\\.conf\\.js --ignore=\"(angular-cli|tsconfig)\\.json\" --ignore=webpack.*\\.js --out=packages --all --overwrite"
   },
   "private": true,
   "dependencies": {
