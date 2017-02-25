@@ -8,25 +8,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 
-    <link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic" rel="stylesheet" />
-    <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-
     <style>
+      html, body {
+        background-color: #2b2b2b;
+      }
+
       .loading {
-        opacity: 0;
-        transition: all 2s;
         position: fixed;
         height: 100%;
         width: 100%;
         top: 0;
         left: 0;
         background: #2b2b2b;
-        z-index: -1;
-      }
-
-      app-root:empty + .loading {
-        opacity: 1;
-        z-index: 100;
       }
 
       .loader {
@@ -115,10 +108,7 @@
       }
     </style>
   </head>
-
   <body>
-    <app-root fxLayout="column" fxFill></app-root>
-
     <div class="loading">
       <div class="loader">Loading...</div>
     </div>

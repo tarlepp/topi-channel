@@ -1,54 +1,83 @@
 'use strict';
 
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, Menu } = require('electron');
 const url = require('url');
 
 require('electron-debug')({showDevTools: true});
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
-let win;
+let mainWindow;
+let loadingScreen;
+
+const windowParams = {
+  width: 1000,
+  height: 600,
+  backgroundColor: '#2b2b2b',
+  resizable: false,
+  maximizable: false,
+  darkTheme: true,
+  show: false,
+};
 
 function createWindow() {
   setTimeout(() => {
     // Create the browser window.
-    win = new BrowserWindow({
-      width: 1000,
-      height: 600,
-      backgroundColor: '#2b2b2b',
-      resizable: false,
-      maximizable: false,
-      darkTheme: true,
-    });
+    mainWindow = new BrowserWindow(windowParams);
 
-    win.setTitle('Topi Channel');
+    mainWindow.setTitle('Topi Channel');
 
     // and load the index.html of the app.
-    win.loadURL(url.format({
+    mainWindow.loadURL(url.format({
       pathname: 'localhost:4200',
       protocol: 'http:',
       slashes: true
     }));
 
+    mainWindow.webContents.on('did-finish-load', () => {
+      mainWindow.show();
+
+      if (loadingScreen) {
+        let loadingScreenBounds = loadingScreen.getBounds();
+
+        mainWindow.setBounds(loadingScreenBounds);
+        loadingScreen.close();
+      }
+    });
+
     // Open the DevTools when in dev mode.
     if (process.env.NODE_ENV == 'development') {
-      win.webContents.openDevTools();
+      mainWindow.webContents.openDevTools();
     }
 
     // Emitted when the window is closed.
-    win.on('closed', () => {
+    mainWindow.on('closed', () => {
       // Dereference the window object, usually you would store windows
       // in an array if your app supports multi windows, this is the time
       // when you should delete the corresponding element.
-      win = null
-    })
+      mainWindow = null
+    });
+
+    Menu.setApplicationMenu(null);
   }, 12000);
+}
+
+function createLoadingScreen() {
+  loadingScreen = new BrowserWindow(Object.assign(windowParams, {parent: mainWindow}));
+  loadingScreen.loadURL('file://' + __dirname + '/loading.html');
+  loadingScreen.on('closed', () => loadingScreen = null);
+  loadingScreen.webContents.on('did-finish-load', () => {
+    loadingScreen.show();
+  });
 }
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.on('ready', createWindow);
+app.on('ready', () => {
+  createLoadingScreen();
+  createWindow();
+});
 
 // Quit when all windows are closed.
 app.on('window-all-closed', () => {
@@ -62,7 +91,7 @@ app.on('window-all-closed', () => {
 app.on('activate', () => {
   // On macOS it's common to re-create a window in the app when the
   // dock icon is clicked and there are no other windows open.
-  if (win === null) {
+  if (mainWindow === null) {
     createWindow();
   }
 });

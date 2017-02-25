@@ -12,7 +12,8 @@
         "assets",
         "favicon.ico",
         "entry.js",
-        "entry.live.js"
+        "entry.live.js",
+        "loading.html"
       ],
       "index": "index.html",
       "main": "main.ts",
