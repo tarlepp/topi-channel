@@ -1,0 +1,22 @@
+header {
+  order: 1;
+  flex-shrink: 0;
+}
+
+.side-nav {
+  background-color: #3c3f41;
+}
+
+article {
+  order: 1;
+  flex: 1;
+  overflow: auto;
+  border-left: 1px solid #555;
+}
+
+footer {
+  order: 2;
+  flex-shrink: 0;
+  background-color: #3c3f41;
+  border-top: 1px solid #555;
+}

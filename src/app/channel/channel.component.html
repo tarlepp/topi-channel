@@ -1,7 +1,3 @@
-<div>
-  <h2>Topi Channel</h2>
-
-  <div>
-    <img *ngFor="let video of (videos$ | async)" src="{{video.snippet.thumbnails.medium.url}}" />
-  </div>
+<div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-around center" class="container">
+  <app-thumbnail [video]="video" *ngFor="let video of (videos$ | async)" fxFlex="33%"></app-thumbnail>
 </div>
