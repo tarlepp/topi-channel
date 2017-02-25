@@ -1,5 +1,17 @@
-<div fxLayout="column" fxLayoutAlign="start center" class="container">
-  <img class="video-thumbnail" src="{{ video.snippet.thumbnails.medium.url }}" alt="{{ video.snippet.title }}" />
+<div>
+  <div fxLayout="column" class="container">
+    <div class="controls">
+      <img class="video-thumbnail" src="{{ video.snippet.thumbnails.medium.url }}" alt="{{ video.snippet.title }}" />
 
-  <h4>{{ video.snippet.title }}</h4>
+      <div class="control" fxLayout="column" fxLayoutAlign="center center">
+        <md-icon>play_arrow</md-icon>
+      </div>
+    </div>
+
+    <div class="contents" fxFill fxLayout="column" fxLayoutAlign="start start">
+      <h4>{{ video.snippet.title }}</h4>
+
+      <h5>{{ video.snippet.publishedAt | amTimeAgo }}</h5>
+    </div>
+  </div>
 </div>
