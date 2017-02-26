@@ -14,8 +14,6 @@ const windowParams = {
   width: 1000,
   height: 600,
   backgroundColor: '#2b2b2b',
-  resizable: false,
-  maximizable: false,
   darkTheme: true,
   show: false,
 };
