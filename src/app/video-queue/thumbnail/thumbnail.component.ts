@@ -23,7 +23,7 @@ export class ThumbnailComponent implements OnInit {
 
   // On init we subscribe for active video
   public ngOnInit() {
-    this.videoQueueService.activeVideo.subscribe(video => {
+    this.videoQueueService.activeVideo$.subscribe(video => {
       this.activeVideo = video;
     });
   }
