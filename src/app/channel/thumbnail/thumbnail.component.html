@@ -3,7 +3,7 @@
     <div class="controls">
       <img class="video-thumbnail" src="{{ video.snippet.thumbnails.medium.url }}" alt="{{ video.snippet.title }}" />
 
-      <div class="control" fxLayout="column" fxLayoutAlign="center center">
+      <div class="control" fxLayout="column" fxLayoutAlign="center center" (click)="playVideo(video)">
         <md-icon>play_arrow</md-icon>
       </div>
     </div>

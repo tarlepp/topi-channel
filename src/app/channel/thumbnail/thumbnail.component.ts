@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { VideoItemInterface } from '../../models/video-item.interface';
+import { VideoQueueService } from '../../shared/services/';
 
 @Component({
   selector: 'app-thumbnail',
@@ -10,5 +11,19 @@ import { VideoItemInterface } from '../../models/video-item.interface';
 export class ThumbnailComponent {
   @Input() video: VideoItemInterface;
 
-  constructor() { }
+  /**
+   * Constructor of the class
+   *
+   * @param {VideoQueueService} videoQueue
+   */
+  public constructor(private videoQueue: VideoQueueService) { }
+
+  /**
+   * Method to play selected video.
+   *
+   * @param {VideoItemInterface}  video
+   */
+  public playVideo(video: VideoItemInterface) {
+    this.videoQueue.changeActiveVideo(video);
+  }
 }
