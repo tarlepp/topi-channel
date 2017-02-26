@@ -1,6 +1,5 @@
 <div>
-
-  And here show queued videos somehow
+  <app-video-queue></app-video-queue>
 
   <div class="player" *ngIf="video">
     <youtube-player
@@ -9,5 +8,4 @@
       (change)="onStateChange($event)"
     ></youtube-player>
   </div>
-
 </div>

@@ -12,7 +12,7 @@ import { VideoItemInterface } from '../../models/video-item.interface';
 export class SideNavComponent implements OnInit {
   public video: VideoItemInterface;
   private player: YT.Player;
-  private ytEvent;
+  private ytEvent: YT.PlayerState;
 
   /**
    * Constructor of the class.
@@ -26,7 +26,7 @@ export class SideNavComponent implements OnInit {
    * get user value to update within login / logout states.
    */
   public ngOnInit(): void {
-    this.videoQueue.activeVideo.subscribe(video => {
+    this.videoQueue.activeVideo$.subscribe(video => {
       this.video = video;
 
       if (this.player) {
