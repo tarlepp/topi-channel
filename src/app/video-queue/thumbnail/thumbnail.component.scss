@@ -1,0 +1,25 @@
+.container {
+  margin-top: 8px;
+  opacity: .5;
+  cursor: pointer;
+
+  img {
+    max-width: 70px;
+    transition: all .3s;
+    border-radius: 8px;
+    border: 1px solid #555;
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, .8);
+  }
+
+  &:hover {
+    opacity: 1;
+
+    img {
+      transform: scale(1.1);
+    }
+  }
+
+  &.active {
+    opacity: 1;
+  }
+}

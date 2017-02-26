@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { ChannelModule } from './channel/channel.module';
 import { LayoutModule } from './layout/layout.module';
+import { VideoQueueModule } from './video-queue/video-queue.module';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { LayoutModule } from './layout/layout.module';
     SharedModule,
     LayoutModule,
     ChannelModule,
+    VideoQueueModule,
   ],
   bootstrap: [
     AppComponent,
