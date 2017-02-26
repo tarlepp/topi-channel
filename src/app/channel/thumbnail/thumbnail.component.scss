@@ -1,67 +1,74 @@
-.video-thumbnail {
-  max-width: 250px;
-}
-
 .container {
-  margin-bottom: 24px;
-
-  img {
-    transition: all .3s;
-    border-radius: 8px;
-    border: 1px solid #555;
-    box-shadow: 0 0 25px 5px rgba(0, 0, 0, .8);
-  }
+  margin: 0 8px 24px 8px;
 
   &:hover {
+    .video-thumbnail {
+      img {
+        position: relative;
+        transform: scale(1.1);
+        z-index: 1000;
+      }
+
+      .controls {
+        visibility: visible;
+      }
+    }
+  }
+
+  .video-thumbnail {
+    position: relative;
+
     img {
-      transform: scale(1.1);
+      max-width: 250px;
+      transition: all .3s;
+      border-radius: 8px;
+      border: 1px solid #555;
+      box-shadow: 0 0 25px 5px rgba(0, 0, 0, .8);
     }
 
-    .control {
-      visibility: visible;
+    .controls {
+      width: 100px;
+      height: 40px;
+      position: absolute;
+      z-index: 1001;
+      top: 50%;
+      left: 50%;
+      margin-left: -50px;
+      margin-top: -20px;
+      visibility: hidden;
+
+      .control {
+        background-color: #555;
+        border: 1px solid #2b2b2b;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        border-radius: 4px;
+        box-shadow: 0 0 25px 5px rgba(0, 0, 0, .8);
+
+        &:hover {
+          background-color: #2b2b2b;
+          border: 1px solid #555;
+        }
+      }
     }
   }
-}
 
-.controls {
-  position: relative;
-}
+  .contents {
+    padding: 0 4px;
 
-.control {
-  visibility: hidden;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  background-color: #555;
-  border: 1px solid #2b2b2b;
-  width: 40px;
-  height: 40px;
-  margin-left: -20px;
-  margin-top: -20px;
-  cursor: pointer;
-  border-radius: 4px;
-  box-shadow: 0 0 25px 5px rgba(0, 0, 0, .8);
+    h4,
+    h5 {
+      margin: 0;
+      padding: 0;
+    }
 
-  &:hover {
-    background-color: #2b2b2b;
-    border: 1px solid #555;
+    h4 {
+      margin-top: 8px;
+    }
+
+    h5 {
+      font-weight: normal;
+    }
   }
-}
-
-.contents {
-  padding: 0 4px;
-}
-
-h4,
-h5 {
-  margin: 0;
-  padding: 0;
-}
-
-h4 {
-  margin-top: 8px;
-}
-
-h5 {
-  font-weight: normal;
 }

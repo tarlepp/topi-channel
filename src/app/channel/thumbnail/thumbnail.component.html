@@ -1,14 +1,41 @@
 <div>
-  <div fxLayout="column" class="container">
-    <div class="controls">
-      <img class="video-thumbnail" src="{{ video.snippet.thumbnails.medium.url }}" alt="{{ video.snippet.title }}" />
+  <div class="container"
+    fxLayout="column"
+  >
+    <div class="video-thumbnail">
+      <img src="{{ video.snippet.thumbnails.medium.url }}" alt="{{ video.snippet.title }}" />
 
-      <div class="control" fxLayout="column" fxLayoutAlign="center center" (click)="playVideo(video)">
-        <md-icon>play_arrow</md-icon>
+      <div class="controls"
+        fxLayout="row"
+        fxLayoutAlign="space-around center"
+      >
+        <div class="control"
+          fxLayout="column"
+          fxLayoutAlign="center center"
+          (click)="play()"
+          mdTooltip="Toista video"
+          mdTooltipPosition="above"
+        >
+          <md-icon>play_arrow</md-icon>
+        </div>
+
+        <div class="control"
+          fxLayout="column"
+          fxLayoutAlign="center center"
+          (click)="queue()"
+          mdTooltip="Lisää video jonoon"
+          mdTooltipPosition="above"
+        >
+          <md-icon>queue</md-icon>
+        </div>
       </div>
     </div>
 
-    <div class="contents" fxFill fxLayout="column" fxLayoutAlign="start start">
+    <div class="contents"
+      fxFill
+      fxLayout="column"
+      fxLayoutAlign="start start"
+    >
       <h4>{{ video.snippet.title }}</h4>
 
       <h5>{{ video.snippet.publishedAt | amTimeAgo }}</h5>
