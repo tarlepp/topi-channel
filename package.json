@@ -6,7 +6,7 @@
   "main": "dist/entry.js",
   "scripts": {
     "ng": "ng",
-    "start": "concurrently \"ng serve --host 0.0.0.0\" \"electron src/entry.live.js\"",
+    "start": "concurrently \"ng serve --host 0.0.0.0\" \"electron src/entry.live.js --disable-gpu\"",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
