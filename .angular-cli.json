@@ -10,10 +10,8 @@
       "outDir": "dist",
       "assets": [
         "assets",
-        "favicon.ico",
-        "entry.js",
-        "entry.live.js",
-        "loading.html"
+        "electron",
+        "favicon.ico"
       ],
       "index": "index.html",
       "main": "main.ts",
