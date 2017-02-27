@@ -3,6 +3,8 @@
 # compiled output
 /dist
 /tmp
+/packages/*
+!/packages/.gitkeep
 
 # dependencies
 /node_modules
