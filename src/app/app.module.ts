@@ -6,6 +6,7 @@ import { SharedModule } from './shared/shared.module';
 import { ChannelModule } from './channel/channel.module';
 import { LayoutModule } from './layout/layout.module';
 import { VideoQueueModule } from './video-queue/video-queue.module';
+import { PlayerModule } from './player/player.module';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { VideoQueueModule } from './video-queue/video-queue.module';
     AppRoutingModule,
     SharedModule,
     LayoutModule,
+    PlayerModule,
     ChannelModule,
     VideoQueueModule,
   ],
