@@ -1,11 +1,5 @@
 <div>
   <app-video-queue></app-video-queue>
 
-  <div class="player" *ngIf="video">
-    <youtube-player
-      [videoId]="video.id.videoId"
-      (ready)="savePlayer($event)"
-      (change)="onStateChange($event)"
-    ></youtube-player>
-  </div>
+  <app-player class="player"></app-player>
 </div>
