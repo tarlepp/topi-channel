@@ -19,13 +19,8 @@ export class ThumbnailComponent {
    */
   public constructor(private videoQueueService: VideoQueueService) { }
 
-  // Method to play current video.
-  public play() {
-    this.videoQueueService.changeActiveVideo(this.video);
-  }
-
   // Method to add current video to queue
-  public queue() {
+  public add() {
     this.videoQueueService.add(this.video);
   }
 }

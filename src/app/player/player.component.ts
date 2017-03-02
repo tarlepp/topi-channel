@@ -35,7 +35,7 @@ export class PlayerComponent implements OnInit {
    * get user value to update within login / logout states.
    */
   public ngOnInit(): void {
-    this.videoQueue.activeVideo$.subscribe(video => {
+    this.videoQueue.video$.subscribe(video => {
       this.video = video;
 
       if (this.ready) {
