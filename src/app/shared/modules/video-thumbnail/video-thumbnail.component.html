@@ -1,4 +1,5 @@
 <div class="container"
+  *ngIf="video"
   [class.queue]="type === videoThumbnailType.Queue"
   [class.active]="isActive()"
   (click)="activateVideo()"

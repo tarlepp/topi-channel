@@ -1,6 +1,6 @@
 import { TestBed, ComponentFixture, async } from '@angular/core/testing';
-import { MaterialModule } from '@angular/material';
 
+import { SharedModule } from '../../shared/shared.module';
 import { FooterComponent } from './footer.component';
 
 describe('Component: /layout/footer/footer.component.ts', () => {
@@ -8,15 +8,16 @@ describe('Component: /layout/footer/footer.component.ts', () => {
   let fixture: ComponentFixture<FooterComponent>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [
-        FooterComponent,
-      ],
-      imports: [
-        MaterialModule.forRoot(),
-      ],
-    })
-    .compileComponents();
+    return TestBed
+      .configureTestingModule({
+        declarations: [
+          FooterComponent,
+        ],
+        imports: [
+          SharedModule,
+        ],
+      })
+      .compileComponents();
   }));
 
   beforeEach(() => {

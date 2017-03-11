@@ -1,22 +1,23 @@
 import { TestBed, ComponentFixture, async } from '@angular/core/testing';
-import { MaterialModule } from '@angular/material';
 
 import { ChannelComponent } from './channel.component';
+import { SharedModule } from '../shared/shared.module';
 
 describe('Component: /about/about.component.ts', () => {
   let component: ChannelComponent;
   let fixture: ComponentFixture<ChannelComponent>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [
-        ChannelComponent,
-      ],
-      imports: [
-        MaterialModule.forRoot(),
-      ],
-    })
-    .compileComponents();
+    return TestBed
+      .configureTestingModule({
+        declarations: [
+          ChannelComponent,
+        ],
+        imports: [
+          SharedModule,
+        ],
+      })
+      .compileComponents();
   }));
 
   beforeEach(() => {

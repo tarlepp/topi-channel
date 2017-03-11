@@ -1,16 +1,23 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { VideoQueueComponent } from './video-queue.component';
+import { SharedModule } from '../shared/shared.module';
 
 describe('VideoQueueComponent', () => {
   let component: VideoQueueComponent;
   let fixture: ComponentFixture<VideoQueueComponent>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ VideoQueueComponent ]
-    })
-    .compileComponents();
+    return TestBed
+      .configureTestingModule({
+        declarations: [
+          VideoQueueComponent,
+        ],
+        imports: [
+          SharedModule,
+        ],
+      })
+      .compileComponents();
   }));
 
   beforeEach(() => {
