@@ -1,3 +1,7 @@
 <div fxLayout="column" fxLayoutAlign="start center" class="container">
-  <app-video-queue-thumbnail [video]="video" *ngFor="let video of videos$ | async"></app-video-queue-thumbnail>
+  <app-video-thumbnail
+    [video]="video"
+    [type]="videoThumbnailType.Queue"
+    *ngFor="let video of (videos$ | async)"
+  ></app-video-thumbnail>
 </div>

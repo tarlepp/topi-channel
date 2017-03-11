@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 
 import { SharedModule } from '../shared/shared.module';
-import { VideoQueueComponent, ThumbnailComponent } from './index';
+import { VideoQueueComponent } from './index';
 
 @NgModule({
   imports: [
@@ -9,7 +9,6 @@ import { VideoQueueComponent, ThumbnailComponent } from './index';
   ],
   declarations: [
     VideoQueueComponent,
-    ThumbnailComponent,
   ],
   exports: [
     VideoQueueComponent,

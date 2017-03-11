@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { VideoQueueService } from '../shared/services/';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+
+import { VideoQueueService } from '../shared/services/';
 import { VideoItemInterface } from '../models/video-item.interface';
+import { VideoThumbnailType } from '../shared/modules/video-thumbnail/video-thumbnail-type.enum';
 
 @Component({
   selector: 'app-video-queue',
@@ -11,6 +13,7 @@ import { VideoItemInterface } from '../models/video-item.interface';
 
 export class VideoQueueComponent implements OnInit {
   public videos$: BehaviorSubject<VideoItemInterface[]>;
+  public videoThumbnailType = VideoThumbnailType;
 
   /**
    * Constructor of the class.

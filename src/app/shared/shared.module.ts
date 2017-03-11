@@ -12,6 +12,7 @@ import 'moment/locale/fi';
 import 'hammerjs';
 
 import { Directives } from './directives/';
+import { Modules } from './modules/';
 import { Config } from '../config/config';
 import { Services } from './services/';
 
@@ -28,6 +29,7 @@ import { Services } from './services/';
     MaterialModule,
     FlexLayoutModule,
     MomentModule,
+    ...Modules,
   ],
   providers: [
     MdIconRegistry,
@@ -44,6 +46,7 @@ import { Services } from './services/';
     FlexLayoutModule,
     MomentModule,
     ...Directives,
+    ...Modules,
   ],
 })
 

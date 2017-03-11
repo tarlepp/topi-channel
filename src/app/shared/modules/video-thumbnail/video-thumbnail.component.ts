@@ -1,17 +1,20 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
-import { VideoItemInterface } from '../../models/video-item.interface';
-import { VideoQueueService } from '../../shared/services/';
+import { VideoItemInterface } from '../../../models/video-item.interface';
+import { VideoQueueService } from '../../../shared/services/';
+import { VideoThumbnailType } from './video-thumbnail-type.enum';
 
 @Component({
-  selector: 'app-video-queue-thumbnail',
-  templateUrl: './thumbnail.component.html',
-  styleUrls: ['./thumbnail.component.scss']
+  selector: 'app-video-thumbnail',
+  templateUrl: 'video-thumbnail.component.html',
+  styleUrls: ['video-thumbnail.component.scss']
 })
 
-export class ThumbnailComponent implements OnInit {
+export class VideoThumbnailComponent implements OnInit {
   @Input() video: VideoItemInterface;
+  @Input() type: VideoThumbnailType;
 
+  public videoThumbnailType = VideoThumbnailType;
   private activeVideo: VideoItemInterface;
 
   /**
@@ -26,6 +29,13 @@ export class ThumbnailComponent implements OnInit {
     this.videoQueueService.video$.subscribe(video => {
       this.activeVideo = video;
     });
+
+    console.log(this.type);
+  }
+
+  // Method to add current video to queue
+  public add() {
+    this.videoQueueService.add(this.video);
   }
 
   // Method to determine if current video is active or not
