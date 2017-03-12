@@ -1,4 +1,31 @@
-<div class="container" *ngIf="video">
+<div class="container"
+  *ngIf="video"
+  [class.minimized]="minimized"
+>
+  <div class="controls"
+    *ngIf="!minimized"
+    fxLayout="row"
+    fxLayoutAlign="space-between center"
+  >
+    <div>
+      {{ video.snippet.title }}
+    </div>
+
+    <button
+      (click)="minimizePlayer($event)"
+      md-mini-fab
+    >
+      <md-icon>
+        keyboard_arrow_down
+      </md-icon>
+    </button>
+  </div>
+
+  <div class="overlay"
+    *ngIf="minimized"
+    (click)="maximizePlayer($event)"
+  ></div>
+
   <youtube-player
     [videoId]="video.id.videoId"
     (ready)="playerService.setPlayer($event)"

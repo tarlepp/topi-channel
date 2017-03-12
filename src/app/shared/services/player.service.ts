@@ -5,9 +5,11 @@ import { ReplaySubject } from 'rxjs/ReplaySubject';
 export class PlayerService {
   public state$: ReplaySubject<YT.PlayerState> = new ReplaySubject(1);
   public ready$: ReplaySubject<boolean> = new ReplaySubject(1);
+  public minimized$: ReplaySubject<boolean> = new ReplaySubject(1);
   private player: YT.Player;
   private state: YT.PlayerState;
   private ready = false;
+  private minimized = false;
 
   /**
    * Constructor of the class
@@ -46,6 +48,13 @@ export class PlayerService {
     this.state$.next(this.state);
 
     return this.state$;
+  }
+
+  public changeMinimizeState(state: boolean): ReplaySubject<boolean> {
+    this.minimized = state;
+    this.minimized$.next(this.minimized);
+
+    return this.minimized$;
   }
 
   /**

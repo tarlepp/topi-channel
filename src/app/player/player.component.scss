@@ -1,4 +1,51 @@
 @import '../../mixins';
 
 .container {
+  background-color: map-get($mat-grey, 1000);
+  box-shadow: 0 0 20px 5px rgba(238, 238, 238, 0.8);
+  transition: all .5s;
+
+  &.minimized {
+    box-shadow: none;
+    transform: scale(0.125);
+    position: relative;
+    bottom: -115px;
+    left: -150px;
+    cursor: pointer;
+  }
+
+  .controls {
+    padding: 8px;
+
+    .mat-mini-fab {
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      min-height: 20px;
+      vertical-align: top;
+      font-size: 10px;
+      padding: 0 0;
+      margin: 0;
+
+      md-icon {
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        padding: 0;
+        font-size: 16px;
+      }
+    }
+  }
+
+  .overlay {
+    cursor: pointer;
+    position: absolute;
+    left: 150px;
+    bottom: 120px;
+    z-index: 2000;
+    border: 1px solid red;
+    width: 55px;
+    height: 35px;
+    transform: scale(8);
+  }
 }

@@ -10,6 +10,7 @@ import { PlayerService, VideoQueueService } from '../shared/services/';
 
 export class PlayerComponent implements OnInit {
   public video: VideoItemInterface;
+  public minimized = false;
   private ready = false;
 
   /**
@@ -50,5 +51,22 @@ export class PlayerComponent implements OnInit {
         this.playerService.getPlayer().loadVideoById(this.video.id.videoId);
       }
     });
+
+    this.playerService.minimized$.subscribe(minimized => {
+      this.minimized = minimized;
+    });
+  }
+
+  public minimizePlayer(): void {
+    this.playerService.changeMinimizeState(true);
+  }
+
+  public maximizePlayer(event: Event): void {
+    event.preventDefault();
+    event.stopPropagation();
+
+    if (this.minimized) {
+      this.playerService.changeMinimizeState(false);
+    }
   }
 }
