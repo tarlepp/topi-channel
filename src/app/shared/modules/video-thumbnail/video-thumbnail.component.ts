@@ -29,8 +29,6 @@ export class VideoThumbnailComponent implements OnInit {
     this.videoQueueService.video$.subscribe(video => {
       this.activeVideo = video;
     });
-
-    console.log(this.type);
   }
 
   public getControlsAlign() {
