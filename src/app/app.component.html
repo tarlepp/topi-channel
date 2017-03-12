@@ -1,18 +1,15 @@
-<div fxFlex fxLayout="row">
-  <div fxFlex="95px" class="side-nav">
-    <router-outlet name="side-nav"></router-outlet>
-  </div>
+<div fxFlex fxLayout="column">
+  <div fxFlex fxLayout="row">
+    <div fxFlex="95px" class="side-nav">
+      <router-outlet name="side-nav"></router-outlet>
+    </div>
 
-  <div fxFlex fxLayout="column">
     <article fxFlex fxLayoutAlign="start start">
       <router-outlet></router-outlet>
     </article>
-
-    <footer fxFlex="40px">
-      <router-outlet name="footer"></router-outlet>
-    </footer>
   </div>
 
-
+  <footer fxFlex="40px">
+    <router-outlet name="footer"></router-outlet>
+  </footer>
 </div>
-

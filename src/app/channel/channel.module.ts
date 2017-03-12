@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 
 import { SharedModule } from '../shared/shared.module';
-import { ChannelComponent } from './index';
 import { ChannelRoutingModule } from './channel-routing.module';
+import { ChannelComponent } from './index';
 
 @NgModule({
   imports: [

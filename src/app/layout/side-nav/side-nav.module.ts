@@ -9,7 +9,6 @@ import { PlayerModule } from '../../player/player.module';
   imports: [
     SharedModule,
     VideoQueueModule,
-    PlayerModule,
   ],
   declarations: [
     SideNavComponent,
