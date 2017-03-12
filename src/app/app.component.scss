@@ -1,22 +1,24 @@
+@import '../mixins';
+
 header {
   order: 1;
   flex-shrink: 0;
 }
 
 .side-nav {
-  background-color: #3c3f41;
+  background-color: $backgroundSectionLight;
 }
 
 article {
   order: 1;
   flex: 1;
   overflow: auto;
-  border-left: 1px solid #555;
+  border-left: 1px solid $colorBorderLight;
+  border-bottom: 1px solid $colorBorderLight;
 }
 
 footer {
   order: 2;
   flex-shrink: 0;
-  background-color: #3c3f41;
-  border-top: 1px solid #555;
+  background-color: $backgroundSectionLight;
 }

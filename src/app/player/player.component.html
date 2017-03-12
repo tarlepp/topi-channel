@@ -1,4 +1,4 @@
-<div *ngIf="video">
+<div class="container" *ngIf="video">
   <youtube-player
     [videoId]="video.id.videoId"
     (ready)="playerService.setPlayer($event)"
