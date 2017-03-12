@@ -47,4 +47,22 @@ export class VideoQueueService {
 
     return this.videos$;
   }
+
+  /**
+   * Method to remove specified video from queue.
+   *
+   * @param {VideoItemInterface}  video
+   * @returns {BehaviorSubject<VideoItemInterface[]>}
+   */
+  public remove(video: VideoItemInterface): BehaviorSubject<VideoItemInterface[]> {
+    const index = this.videos.indexOf(video);
+
+    if (index !== -1) {
+      this.videos.splice(index, 1);
+    }
+
+    this.videos$.next(this.videos);
+
+    return this.videos$;
+  }
 }

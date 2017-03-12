@@ -33,9 +33,18 @@ export class VideoThumbnailComponent implements OnInit {
     console.log(this.type);
   }
 
+  public getControlsAlign() {
+    return this.type === VideoThumbnailType.Channel ? 'space-around center' : 'end end';
+  }
+
   // Method to add current video to queue
   public add() {
     this.videoQueueService.add(this.video);
+  }
+
+  // Method to remove current video from queue
+  public remove() {
+    this.videoQueueService.remove(this.video);
   }
 
   // Method to determine if current video is active or not

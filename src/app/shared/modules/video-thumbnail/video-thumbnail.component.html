@@ -1,7 +1,8 @@
 <div class="container"
   *ngIf="video"
-  [class.queue]="type === videoThumbnailType.Queue"
   [class.active]="isActive()"
+  [class.channel]="type === videoThumbnailType.Channel"
+  [class.queue]="type === videoThumbnailType.Queue"
   (click)="activateVideo()"
   fxLayout="column"
 >
@@ -9,18 +10,29 @@
     <img src="{{ video.snippet.thumbnails.medium.url }}" alt="{{ video.snippet.title }}" />
 
     <div class="controls"
-      *ngIf="type === videoThumbnailType.Channel"
       fxLayout="row"
-      fxLayoutAlign="space-around center"
+      fxLayoutAlign="{{ getControlsAlign() }}"
     >
       <div class="control"
+        *ngIf="type === videoThumbnailType.Channel"
+        (click)="add()"
         fxLayout="column"
         fxLayoutAlign="center center"
-        (click)="add()"
         mdTooltip="Toista video"
         mdTooltipPosition="above"
       >
         <md-icon>play_arrow</md-icon>
+      </div>
+
+      <div class="control"
+        *ngIf="type === videoThumbnailType.Queue"
+        (click)="remove()"
+        fxLayout="column"
+        fxLayoutAlign="center center"
+        mdTooltip="Poista video"
+        mdTooltipPosition="right"
+      >
+        <md-icon>delete</md-icon>
       </div>
     </div>
   </div>
