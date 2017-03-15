@@ -1,6 +1,7 @@
 import { TestBed, ComponentFixture, async } from '@angular/core/testing';
 
 import { SharedModule } from '../../shared/shared.module';
+import { PlayerModule } from '../../player/player.module';
 import { FooterComponent } from './footer.component';
 
 describe('Component: /layout/footer/footer.component.ts', () => {
@@ -15,6 +16,7 @@ describe('Component: /layout/footer/footer.component.ts', () => {
         ],
         imports: [
           SharedModule,
+          PlayerModule,
         ],
       })
       .compileComponents();
