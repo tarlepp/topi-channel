@@ -7,7 +7,7 @@
   "scripts": {
     "ng": "ng",
     "start": "concurrently \"ng serve --host 0.0.0.0\" \"electron src/electron/live.js --disable-gpu\"",
-    "test": "ng test",
+    "test": "ng lint && ng test --code-coverage",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "electron": "electron .",
