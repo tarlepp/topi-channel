@@ -5,6 +5,24 @@
 [![Dependency Status](https://david-dm.org/tarlepp/topi-channel.svg)](https://david-dm.org/tarlepp/topi-channel)
 [![devDependency Status](https://david-dm.org/tarlepp/topi-channel/dev-status.svg)](https://david-dm.org/tarlepp/topi-channel#info=devDependencies)
 
+Table of Contents
+=================
+* [What is this?](#what-is-this)
+* [Used libraries, guides, etc.](#used-libraries-guides-etc)
+  * [Libraries](#libraries)
+  * [Guides](#guides)
+  * [Other resources](#other-resources)
+* [Installation, configure and usage](#installation-configure-and-usage)
+  * [Preconditions](#preconditions)
+  * [Installation](#installation)
+* [Development](#development)
+* [Tests](#tests)
+  * [Unit tests](#unit-tests)
+  * [e2e tests](#e2e-tests)
+* [Build](#build)
+* [Author](#author)
+* [License](#license)
+
 ## What is this?
 Application to show videos from Topi's YouTube channel
 
