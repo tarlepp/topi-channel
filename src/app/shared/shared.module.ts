@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
-import { MaterialModule, MdIconRegistry } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MomentModule } from 'angular2-moment';
 
@@ -21,28 +21,27 @@ import { Services } from './services/';
     ...Directives,
   ],
   imports: [
+    BrowserAnimationsModule,
     CommonModule,
     BrowserModule,
     FormsModule,
     HttpModule,
     RouterModule,
-    MaterialModule,
     FlexLayoutModule,
     MomentModule,
     ...Modules,
   ],
   providers: [
-    MdIconRegistry,
     Config,
     ...Services,
   ],
   exports: [
+    BrowserAnimationsModule,
     CommonModule,
     BrowserModule,
     FormsModule,
     HttpModule,
     RouterModule,
-    MaterialModule,
     FlexLayoutModule,
     MomentModule,
     ...Directives,
